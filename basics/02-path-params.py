@@ -34,4 +34,9 @@ async def user_type(type:UserType, id:int):
 async def get_user(id:int=Path(ge=5, le=10)):
   return {"id": id}
 
+# default value
+@app.get('/products/{id}')
+async def get_product(id:int=1):
+  return {"id": id}
 
+app.get('/products')(get_product)
