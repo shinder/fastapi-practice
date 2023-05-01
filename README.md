@@ -17,6 +17,8 @@ pip install gunicorn  # WSGI server
 ```sh
 # 開發啟動
 uvicorn main:app --reload --port 8888
+# 預設為 port 8000
+uvicorn 01-begin:app --reload
 
 # 開發啟動，使用 gunicorn
 gunicorn main:app -b 0.0.0.0:8888 -k uvicorn.workers.UvicornWorker
